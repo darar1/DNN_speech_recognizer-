@@ -18,25 +18,25 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Natural Language Processing Nanodegree
+# Natural Language Processing Nanodegree
 
-Voice User Interfaces
+# Voice User Interfaces
 
-Project: Speech Recognition with Neural Networks
+## Project: Speech Recognition with Neural Networks
 
-Author: Dara Rouholiman(dara.rouholiman@gmail.com)
+## Author: Dara Rouholiman(dara.rouholiman@gmail.com)
 
-Install
+### Install
 
 TensorFlow with GPU support on your local machine Or Create a EC2 GPU instance on AWS/google cloud/floydhub
 
 Switch Keras backend to TensorFlow.
 
-Code
+### Code
 
 Template code and required datasets were provided by Udacity in https://github.com/udacity.
 
-Project Overview
+## Project Overview
 
 Building a deep neural network that functions as part of an end-to-end automatic speech recognition (ASR) pipeline! Your completed pipeline will accept raw audio as input and return a predicted transcription of the spoken language. 
 
