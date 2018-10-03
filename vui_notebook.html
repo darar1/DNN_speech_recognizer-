@@ -11776,15 +11776,6 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Artificial-Intelligence-Nanodegree">Artificial Intelligence Nanodegree<a class="anchor-link" href="#Artificial-Intelligence-Nanodegree">&#182;</a></h1><h2 id="Voice-User-Interfaces">Voice User Interfaces<a class="anchor-link" href="#Voice-User-Interfaces">&#182;</a></h2><h2 id="Project:-Speech-Recognition-with-Neural-Networks">Project: Speech Recognition with Neural Networks<a class="anchor-link" href="#Project:-Speech-Recognition-with-Neural-Networks">&#182;</a></h2><hr>
-<p>In this notebook, some template code has already been provided for you, and you will need to implement additional functionality to successfully complete this project. You will not need to modify the included code beyond what is requested. Sections that begin with <strong>'(IMPLEMENTATION)'</strong> in the header indicate that the following blocks of code will require additional functionality which you must provide. Please be sure to read the instructions carefully!</p>
-<blockquote><p><strong>Note</strong>: Once you have completed all of the code implementations, you need to finalize your work by exporting the Jupyter Notebook as an HTML document. Before exporting the notebook to html, all of the code cells need to have been run so that reviewers can see the final implementation and output. You can then export the notebook by using the menu above and navigating to  \n",
-    "<strong>File -&gt; Download as -&gt; HTML (.html)</strong>. Include the finished document along with this notebook as your submission.</p>
-</blockquote>
-<p>In addition to implementing code, there will be questions that you must answer which relate to the project and your implementation. Each section where you will answer a question is preceded by a <strong>'Question X'</strong> header. Carefully read each question and provide thorough answers in the following text boxes that begin with <strong>'Answer:'</strong>. Your project submission will be evaluated based on your answers to each of the questions and the implementation you provide.</p>
-<blockquote><p><strong>Note:</strong> Code and Markdown cells can be executed using the <strong>Shift + Enter</strong> keyboard shortcut.  Markdown cells can be edited by double-clicking the cell to enter edit mode.</p>
-</blockquote>
-<p>The rubric contains <em>optional</em> "Stand Out Suggestions" for enhancing the project beyond the minimum requirements. If you decide to pursue the "Stand Out Suggestions", you should include the code in this Jupyter notebook.</p>
-<hr>
 <h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>In this notebook, you will build a deep neural network that functions as part of an end-to-end automatic speech recognition (ASR) pipeline!  Your completed pipeline will accept raw audio as input and return a predicted transcription of the spoken language.  The full pipeline is summarized in the figure below.</p>
 <p><img src="images/pipeline.png"></p>
 <ul>
@@ -11961,8 +11952,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step1'></a></p>
-<h2 id="STEP-1:-Acoustic-Features-for-Speech-Recognition">STEP 1: Acoustic Features for Speech Recognition<a class="anchor-link" href="#STEP-1:-Acoustic-Features-for-Speech-Recognition">&#182;</a></h2><p>For this project, you won't use the raw audio waveform as input to your model.  Instead, we provide code that first performs a pre-processing step to convert the raw audio to a feature representation that has historically proven successful for ASR models.  Your acoustic model will accept the feature representation as input.</p>
-<p>In this project, you will explore two possible feature representations.  <em>After completing the project</em>, if you'd like to read more about deep learning architectures that can accept raw audio input, you are encouraged to explore this <a href="https://pdfs.semanticscholar.org/a566/cd4a8623d661a4931814d9dffc72ecbf63c4.pdf">research paper</a>.</p>
+<h2 id="STEP-1:-Acoustic-Features-for-Speech-Recognition">STEP 1: Acoustic Features for Speech Recognition<a class="anchor-link" href="#STEP-1:-Acoustic-Features-for-Speech-Recognition">&#182;</a></h2><p>In this project, you will explore two possible feature representations.  <em>After completing the project</em>, if you'd like to read more about deep learning architectures that can accept raw audio input, you are encouraged to explore this <a href="https://pdfs.semanticscholar.org/a566/cd4a8623d661a4931814d9dffc72ecbf63c4.pdf">research paper</a>.</p>
 <h3 id="Spectrograms">Spectrograms<a class="anchor-link" href="#Spectrograms">&#182;</a></h3><p>The first option for an audio feature representation is the <a href="https://www.youtube.com/watch?v=_FatxGN3vAM">spectrogram</a>.  In order to complete this project, you will <strong>not</strong> need to dig deeply into the details of how a spectrogram is calculated; but, if you are curious, the code for calculating the spectrogram was borrowed from <a href="https://github.com/baidu-research/ba-dls-deepspeech">this repository</a>.  The implementation appears in the <code>utils.py</code> file in your repository.</p>
 <p>The code that we give you returns the spectrogram as a 2D tensor, where the first (<em>vertical</em>) dimension indexes time, and the second (<em>horizontal</em>) dimension indexes frequency.  To speed the convergence of your algorithm, we have also normalized the spectrogram.  (You can see this quickly in the visualization below by noting that the mean value hovers around zero, and most entries in the tensor assume values close to zero.)</p>
 
@@ -12105,11 +12095,8 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='step2'></a></p>
-<h2 id="STEP-2:-Deep-Neural-Networks-for-Acoustic-Modeling">STEP 2: Deep Neural Networks for Acoustic Modeling<a class="anchor-link" href="#STEP-2:-Deep-Neural-Networks-for-Acoustic-Modeling">&#182;</a></h2><p>In this section, you will experiment with various neural network architectures for acoustic modeling.</p>
-<p>You will begin by training five relatively simple architectures.  <strong>Model 0</strong> is provided for you.  You will write code to implement <strong>Models 1</strong>, <strong>2</strong>, <strong>3</strong>, and <strong>4</strong>.  If you would like to experiment further, you are welcome to create and train more models under the <strong>Models 5+</strong> heading.</p>
-<p>All models will be specified in the <code>sample_models.py</code> file.  After importing the <code>sample_models</code> module, you will train your architectures in the notebook.</p>
+<h2 id="STEP-2:-Deep-Neural-Networks-for-Acoustic-Modeling">STEP 2: Deep Neural Networks for Acoustic Modeling<a class="anchor-link" href="#STEP-2:-Deep-Neural-Networks-for-Acoustic-Modeling">&#182;</a></h2><p>All models will be specified in the <code>sample_models.py</code> file.  After importing the <code>sample_models</code> module, you will train your architectures in the notebook.</p>
 <p>After experimenting with the five simple architectures, you will have the opportunity to compare their performance.  Based on your findings, you will construct a deeper architecture that is designed to outperform all of the shallow models.</p>
-<p>For your convenience, we have designed the notebook so that each model can be specified and trained on separate occasions.  That is, say you decide to take a break from the notebook after training <strong>Model 1</strong>.  Then, you need not re-execute all prior code cells in the notebook before training <strong>Model 2</strong>.  You need only re-execute the code cell below, that is marked with <strong><code>RUN THIS CODE CELL IF YOU ARE RESUMING THE NOTEBOOK AFTER A BREAK</code></strong>, before transitioning to the code cells corresponding to <strong>Model 2</strong>.</p>
 
 </div>
 </div>
@@ -12226,7 +12213,7 @@ None
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As explored in the lesson, you will train the acoustic model with the <a href="http://www.cs.toronto.edu/~graves/icml_2006.pdf">CTC loss</a> criterion.  Custom loss functions take a bit of hacking in Keras, and so we have implemented the CTC loss function for you, so that you can focus on trying out as many deep learning architectures as possible :).  If you'd like to peek at the implementation details, look at the <code>add_ctc_loss</code> function within the <code>train_utils.py</code> file in the repository.</p>
+<p>As explored in the lesson, you will train the acoustic model with the <a href="http://www.cs.toronto.edu/~graves/icml_2006.pdf">CTC loss</a> criterion.  Custom loss functions take a bit of hacking in Keras, and so Udacity has implemented the CTC loss function for you, so that you can focus on trying out as many deep learning architectures as possible :).  If you'd like to peek at the implementation details, look at the <code>add_ctc_loss</code> function within the <code>train_utils.py</code> file in the repository.</p>
 <p>To train your architecture, you will use the <code>train_model</code> function within the <code>train_utils</code> module; it has already been imported in one of the above code cells.  The <code>train_model</code> function takes three <strong>required</strong> arguments:</p>
 <ul>
 <li><code>input_to_softmax</code> - a Keras model instance.</li>
@@ -12986,30 +12973,6 @@ Epoch 20/20
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='model5'></a></p>
-<h3 id="(OPTIONAL-IMPLEMENTATION)-Models-5+">(OPTIONAL IMPLEMENTATION) Models 5+<a class="anchor-link" href="#(OPTIONAL-IMPLEMENTATION)-Models-5+">&#182;</a></h3><p>If you would like to try out more architectures than the ones above, please use the code cell below.  Please continue to follow the same convention for saving the models; for the $i$-th sample model, please save the loss at <strong><code>model_i.pickle</code></strong> and saving the trained model at <strong><code>model_i.h5</code></strong>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## (Optional) TODO: Try out some more models!</span>
-<span class="c1">### Feel free to use as many code cells as needed.</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='compare'></a></p>
 <h3 id="Compare-the-Models">Compare the Models<a class="anchor-link" href="#Compare-the-Models">&#182;</a></h3><p>Execute the code cell below to evaluate the performance of the drafted deep learning models.  The training and validation loss are plotted for each model.</p>
 
@@ -13567,16 +13530,6 @@ the ve is lergers lagur neverge tey sexmevers
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>One standard way to improve the results of the decoder is to incorporate a language model.  We won't pursue this in the notebook, but you are welcome to do so as an <em>optional extension</em>.</p>
-<p>If you are interested in creating models that provide improved transcriptions, you are encouraged to download <a href="http://www.openslr.org/12/">more data</a> and train bigger, deeper models.  But beware - the model will likely take a long while to train.  For instance, training this <a href="https://arxiv.org/pdf/1512.02595v1.pdf">state-of-the-art</a> model would take 3-6 weeks on a single GPU!</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>
